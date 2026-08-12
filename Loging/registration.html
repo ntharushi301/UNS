@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - UNS Portal System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-container">
+    
+    <!-- Left Hero Section -->
+    <div class="hero-section">
+      <div class="logo-wrapper">
+        <img src="../Sources/Logo.png" alt="UNS Logo" class="brand-logo">
+      </div>
+
+      <div class="hero-content">
+        <h1>Start Your Academic<br>Journey Here</h1>
+        <p class="hero-subtitle">
+          Access timetables, course modules, hall maps,<br>
+          and live virtual classes in one central hub.
+        </p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-icon">📅</span>
+            <div>
+              <div class="feature-title">Personalized Timetable</div>
+              <div class="feature-desc">Daily & Weekly schedule management</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">📚</span>
+            <div>
+              <div class="feature-title">Lecture Slide Repository</div>
+              <div class="feature-desc">Instant access to course material & guides</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">📍</span>
+            <div>
+              <div class="feature-title">Campus Hall Navigation</div>
+              <div class="feature-desc">Interactive venue locator & directions</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">🎥</span>
+            <div>
+              <div class="feature-title">Integrated Virtual Classroom</div>
+              <div class="feature-desc">Direct access to online lectures & mentoring</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="hero-footer">
+        © UNS Portal System • All Rights Reserved
+      </footer>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="form-section">
+      <div class="form-card">
+        <h2>Create Your Account</h2>
+        <p class="form-subtitle">Fill in your official university credentials to get started.</p>
+
+        <form onsubmit="event.preventDefault();">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullname">FULL NAME</label>
+            <input type="text" id="fullname" placeholder="e.g. Nadun Senanayake" >
+          </div>
+
+          <!-- University Email -->
+          <div class="form-group">
+            <label for="email">UNIVERSITY EMAIL</label>
+            <input type="email" id="email" placeholder="student.id@stu.uns.ac.lk" >
+          </div>
+
+          <!-- Password & Department Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="password">PASSWORD</label>
+              <input type="password" id="password" placeholder="••••••••••••" >
+            </div>
+            <div class="form-group">
+              <label for="department">DEPARTMENT</label>
+              <div class="select-wrapper">
+                <select id="department">
+                  <option value="ICT">ICT</option>
+                  <option value="IAT">IAT</option>
+                  <option value="AT">AT</option>
+                  <option value="ET">ET</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Role & Year Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="role">USER ROLE</label>
+              <div class="select-wrapper">
+                <select id="role">
+                  <option value="student">Undergraduate Student</option>
+                  <option value="lecturer">Lecturer</option>
+                  <option value="admin">Administrator</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="year">YEAR</label>
+              <div class="select-wrapper">
+                <select id="year">
+                  <option value="1st">1st YEAR</option>
+                  <option value="2nd" selected>2nd YEAR</option>
+                  <option value="3rd">3rd YEAR</option>
+                  <option value="4th">4th YEAR</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" checked>
+            <label for="terms">
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-primary">
+            Register Account <span class="arrow">→</span>
+          </button>
+        </form>
+
+        <div class="divider"></div>
+
+        <!-- Footer Actions Row -->
+        <div class="action-row">
+          <div class="action-col">
+            <p class="action-label">Already have an active account?</p>
+            <a href="#" class="btn-outline">Sign in</a>
+          </div>
+
+          <div class="action-col">
+            <p class="action-label">or continue with</p>
+            <button class="btn-outline btn-google">
+              <svg class="google-icon" viewBox="0 0 24 24">
+                <path fill="#ffffff" d="M12.24 10.285V13.4h6.887c-.58 2.31-2.8 4-5.5 4-3.315 0-6-2.685-6-6s2.685-6 6-6c1.48 0 2.83.54 3.88 1.43l2.38-2.38C18.42 3.12 15.5 2 12.24 2 6.7 2 2.2 6.5 2.2 12s4.5 10 10.04 10c5.78 0 9.62-4.06 9.62-9.79 0-.66-.07-1.3-.18-1.925H12.24z"/>
+              </svg>
+              Google
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
