@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Representative Notices - Student Portal</title>
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="notice.css">
+  
+</head>
+<body>
+
+  <!-- Navigation Panel Placeholder -->
+  <div id="navbar-container"></div>
+
+  <!-- Sidebar Drawer & Overlay Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <main class="dashboard-container">
+    <!-- Header Greeting & Back Action -->
+    <div class="header-action-row">
+      <section class="welcome-header">
+        <h1>Notices</h1>
+        <p class="subtitle">Here is your academic overview for Monday, October 14th.</p>
+      </section>
+      
+      <!-- Back Navigation Button -->
+      <a href="notices.html" class="btn-change-password btn-back">
+        <span>⬅</span> Back
+      </a>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="top-grid">
+      
+      <!-- Left Column: Post Form & Notice Feed -->
+      <div class="feed-column">
+        
+        <!-- Post Notice Creation Card -->
+        <section class="card form-card">
+          <div class="card-title-row">
+            <h2 class="card-subtitle-icon">
+              <span>🚩</span> Post Notice to Year 2 Students
+            </h2>
+            <span class="badge badge-target">🔒 TARGET: YEAR 2 ONLY</span>
+          </div>
+
+          <form id="post-notice-form" class="form-layout">
+            <input 
+              type="text" 
+              class="field-input" 
+              placeholder="Enter Notice Title (e.g. Lab Slot Change)..." 
+              required 
+            />
+            
+            <textarea 
+              class="field-input text-area" 
+              rows="3" 
+              placeholder="Type the detailed message for your batch..." 
+              required
+            ></textarea>
+
+            <div class="form-footer">
+              <span class="auth-label">● Authorized as Year 2 Representative</span>
+              <button type="submit" class="btn-teal">Publish to Year 2</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Notice Feed Card -->
+        <section class="card feed-container-card">
+          <div class="card-title-row header-margin">
+            <h2 class="card-subtitle-icon large-text">
+              <span>🔔</span> Year 2 Notice Feed
+            </h2>
+            <span class="badge badge-teal">3 Active</span>
+          </div>
+
+          <div class="feed-list">
+            <!-- Representative Notice Item -->
+            <div class="feed-card-item">
+              <div class="item-header">
+                <div class="badge-group">
+                  <span class="badge badge-rep">REP NOTICE</span>
+                  <span class="badge badge-batch">YEAR 2 ONLY</span>
+                </div>
+                <span class="timestamp">1h ago</span>
+              </div>
+              
+              <h3 class="notice-headline">CS202 Presentation Schedule Update</h3>
+              <p class="notice-description">Group 01 to 05 presentations are rescheduled to Hall B at 2 PM.</p>
+
+              <div class="item-footer">
+                <span class="author-label">By: You (Year Rep)</span>
+                <button type="button" class="btn-delete-sm">Delete</button>
+              </div>
+            </div>
+
+            <!-- Faculty Notice Item -->
+            <div class="feed-card-item">
+              <div class="item-header">
+                <span class="badge badge-faculty">FACULTY NOTICE</span>
+                <span class="timestamp">Yesterday</span>
+              </div>
+              
+              <h3 class="notice-headline">Mid-Semester Exam Timetable</h3>
+              <p class="notice-description">The official timetable for Year 2 BICT semester end exams is published.</p>
+
+              <div class="item-footer">
+                <span class="author-label">By: Dr. Aruni Perera</span>
+                <span class="author-label">Faculty Only</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: Calendar & Upcoming Batch Deadlines -->
+      <section class="card calendar-card">
+        <div class="calendar-header">
+          <span class="calendar-icon">📅</span>
+          <h2>October 2026</h2>
+        </div>
+        <div class="calendar-grid weekdays">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div class="calendar-grid dates">
+          <span class="other-month">29</span>
+          <span class="other-month">30</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          <span>13</span>
+          <span class="today-highlight">14</span>
+          <span>15</span>
+          <span class="active-date">16</span>
+          <span>17</span>
+        </div>
+
+        <div class="deadlines-section">
+          <span class="section-label">UPCOMING BATCH DEADLINES</span>
+          
+          <div class="deadlines-wrapper">
+            <div class="deadline-box">
+              <div class="deadline-indicator indicator-red"></div>
+              <div class="deadline-info">
+                <span class="deadline-title">CS302 Project Submission</span>
+                <span class="deadline-time text-red">Oct 16, 11:59 PM</span>
+              </div>
+            </div>
+
+            <div class="deadline-box">
+              <div class="deadline-indicator indicator-amber"></div>
+              <div class="deadline-info">
+                <span class="deadline-title text-white">Year 2 Batch Meeting</span>
+                <span class="deadline-time text-amber">Oct 18, 04:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Component Loading & Active Link Script -->
+  <script>
+    // Load navbar.html
+    fetch('../dashboard/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Load sidebar.html and set active state
+    fetch('../dashboard/sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Notices')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>

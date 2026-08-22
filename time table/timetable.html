@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable - Student Portal</title>
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+
+  <!-- Navigation Panel Placeholder -->
+  <div id="navbar-container"></div>
+
+  <!-- Sidebar Drawer & Overlay Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <main class="dashboard-container">
+    <!-- Header Greeting & Back Action -->
+    <div class="header-action-row">
+      <section class="welcome-header">
+        <h1>Good Morning, Nadun</h1>
+        <p class="subtitle">Here is your academic overview for Monday, October 14th.</p>
+      </section>
+      
+      <!-- Back Navigation Button -->
+      <a href="../dashboard.html" class="btn-change-password btn-back">
+        <span>⬅</span> Back to Timetable
+      </a>
+    </div>
+
+    <!-- Timetable Main Card -->
+    <section class="card schedule-card" style="padding: 24px; background-color: #0f192e;">
+      
+      <!-- Controls Top Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <!-- View Toggle Buttons -->
+        <div style="display: flex; background-color: #080f1e; border: 1px solid #1e293b; border-radius: 8px; padding: 4px;">
+          <button type="button" class="btn-change-password" style="background-color: #1e293b; color: #ffffff; margin: 0; padding: 6px 16px; border: none;">Weekly View</button>
+          <button type="button" class="btn-change-password" style="background-color: transparent; color: #64748b; margin: 0; padding: 6px 16px; border: none;" onclick="window.location.href='daily_timetable.html';">Daily View</button>
+        </div>
+
+        <!-- Export Action Button -->
+        <button type="button" class="btn-teal" style="background-color: #0284c7; display: flex; align-items: center; gap: 6px; padding: 8px 16px;">
+          <span>📥</span> Export PDF
+        </button>
+      </div>
+
+      <!-- Schedule Grid Table -->
+      <div class="schedule-table-wrapper">
+        <table class="schedule-table" style="border: 1px solid #1e293b; border-radius: 8px; overflow: hidden;">
+          <thead>
+            <tr>
+              <th class="time-col">TIME</th>
+              <th>MONDAY</th>
+              <th>TUESDAY</th>
+              <th>WEDNESDAY</th>
+              <th>THURSDAY</th>
+              <th>FRIDAY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1: 08:00 - 09:30 -->
+            <tr>
+              <td class="time-col">
+                <strong>08:00</strong>
+                <span style="display: block; font-size: 10px; color: #64748b;">09:30</span>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <!-- Row 2: 09:30 - 11:00 -->
+            <tr>
+              <td class="time-col">
+                <strong>09:30</strong>
+                <span style="display: block; font-size: 10px; color: #64748b;">11:00</span>
+              </td>
+              <td>
+                <div class="slot-card cyan">
+                  <strong>CS401 Lecture</strong>
+                  <span>Hall B | Prof. Miller</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">09:30 - 11:00</span>
+                </div>
+              </td>
+              <td></td>
+              <td>
+                <div class="slot-card teal" style="background-color: #1e3a8a; color: #93c5fd;">
+                  <strong>Math Seminars</strong>
+                  <span>Room 402</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">09:30 - 11:00</span>
+                </div>
+              </td>
+              <td></td>
+              <td>
+                <div class="slot-card cyan">
+                  <strong>CS401 Lab</strong>
+                  <span>Lab 3 | T.A. Sam</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">09:30 - 11:00</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 3: 11:00 - 12:30 -->
+            <tr>
+              <td class="time-col">
+                <strong>11:00</strong>
+                <span style="display: block; font-size: 10px; color: #64748b;">12:30</span>
+              </td>
+              <td></td>
+              <td>
+                <div class="slot-card grey">
+                  <strong>Physics III</strong>
+                  <span>Main Hall</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">11:00 - 12:30</span>
+                </div>
+              </td>
+              <td></td>
+              <td>
+                <div class="slot-card grey">
+                  <strong>Physics III</strong>
+                  <span>Main Hall</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">11:00 - 12:30</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+
+            <!-- Row 4: 13:00 - 14:30 -->
+            <tr>
+              <td class="time-col">
+                <strong>13:00</strong>
+                <span style="display: block; font-size: 10px; color: #64748b;">14:30</span>
+              </td>
+              <td>
+                <div class="slot-card cyan">
+                  <strong>Data Ethics</strong>
+                  <span>Annex 1 | Dr. Silva</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">13:00 - 14:30</span>
+                </div>
+              </td>
+              <td></td>
+              <td>
+                <div class="slot-card grey">
+                  <strong>Software Arch</strong>
+                  <span>Hall A</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">13:00 - 14:30</span>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <!-- Row 5: 14:30 - 16:00 -->
+            <tr>
+              <td class="time-col">
+                <strong>14:30</strong>
+                <span style="display: block; font-size: 10px; color: #64748b;">16:00</span>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="slot-card" style="background-color: #581c87; color: #e9d5ff;">
+                  <strong>AI Systems Lab</strong>
+                  <span>Lab 02 | Prof. Roy</span>
+                  <span style="font-size: 10px; opacity: 0.7; margin-top: 4px;">14:30 - 16:00</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Component Loading Script -->
+  <script>
+    // Fetch navbar from parent directory
+    fetch('../dashboard/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Fetch sidebar from parent directory & highlight Timetable link
+    fetch('../dashboard/sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Timetable')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>

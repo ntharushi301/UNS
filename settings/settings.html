@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings & Preferences - Student Portal</title>
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+  <!-- Navigation Panel Placeholder -->
+  <div id="navbar-container"></div>
+
+  <!-- Sidebar Drawer & Overlay Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <main class="dashboard-container">
+    <!-- Header Title & Back Action -->
+    <div class="header-action-row">
+      <section class="welcome-header">
+        <h1>Settings & Preferences</h1>
+        <p class="subtitle">Manage your notifications, account security, and portal system preferences.</p>
+      </section>
+      
+      <!-- Back Navigation Button -->
+      <a href="../dashboard.html" class="btn-change-password btn-back">
+        <span>⬅</span> Back
+      </a>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+      
+      <!-- Left Column: Notification Preferences & App Preferences -->
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <!-- Notification Preferences Card -->
+        <section class="card" style="padding: 24px; background-color: #0f192e;">
+          <h2 style="font-size: 16px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+            <span>🔔</span> Notification Preferences
+          </h2>
+
+          <div class="toggle-list">
+            <!-- Item 1 -->
+            <div class="toggle-item">
+              <div class="toggle-text">
+                <h3>Academic & Exam Notices</h3>
+                <p>Instant alerts for new notices and schedules.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="toggle-item">
+              <div class="toggle-text">
+                <h3>Timetable & Venue Updates</h3>
+                <p>Notifications on lecture cancellations or hall changes.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="toggle-item">
+              <div class="toggle-text">
+                <h3>Assignment Deadlines</h3>
+                <p>Remind 24 hours before submission deadlines.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="toggle-item">
+              <div class="toggle-text">
+                <h3>Weekly Email Summary</h3>
+                <p>Receive weekly summary to student email.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- App & Interface Preferences Card -->
+        <section class="card" style="padding: 24px; background-color: #0f192e;">
+          <h2 style="font-size: 16px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+            <span>⚙️</span> App & Interface Preferences
+          </h2>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- Theme Selector -->
+            <div>
+              <label style="font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">PORTAL THEME MODE</label>
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn-teal" style="background-color: #0284c7; padding: 8px 16px; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                  <span>🌙</span> Dark Mode
+                </button>
+                <button type="button" class="btn-change-password" style="margin: 0; padding: 8px 16px; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                  <span>☀️</span> Light Mode
+                </button>
+              </div>
+            </div>
+
+            <!-- Language Dropdown -->
+            <div>
+              <label style="font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">LANGUAGE</label>
+              <select class="field-input" style="width: 100%; max-width: 280px; font-size: 12px; padding: 8px 12px;">
+                <option value="en-US">English (United States)</option>
+                <option value="en-UK">English (United Kingdom)</option>
+              </select>
+            </div>
+
+            <!-- Google Calendar Sync Toggle -->
+            <div class="toggle-item" style="margin-top: 4px;">
+              <div class="toggle-text">
+                <h3 style="font-size: 13px;">Auto-Sync Google Calendar</h3>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: Security & Login Card -->
+      <!-- Right Column: Security & Login Card -->
+<section class="card" style="padding: 24px; background-color: #0f192e; display: flex; flex-direction: column; justify-content: space-between;">
+  
+  <div>
+    <h2 style="font-size: 16px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+      <span>🔒</span> Security & Login
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <!-- Account Password -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 16px;">
+        <div>
+          <h3 style="font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 2px;">Account Password</h3>
+          <p style="font-size: 11px; color: #64748b;">Last changed 45 days ago</p>
+        </div>
+        <button type="button" class="btn-secondary">Change Password</button>
+      </div>
+
+      <!-- Two-Factor Authentication -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 16px;">
+        <div>
+          <h3 style="font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 2px;">Two-Factor Authentication (2FA)</h3>
+          <p style="font-size: 11px; color: #22c55e; font-weight: 600;">● Active via Authenticator App</p>
+        </div>
+        <button type="button" class="btn-secondary">Manage 2FA</button>
+      </div>
+
+      <!-- Active Login Sessions -->
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3 style="font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 2px;">Active Login Sessions</h3>
+          <p style="font-size: 11px; color: #64748b;">Chrome on Windows (Current) • Mobile App</p>
+        </div>
+        <button type="button" class="btn-danger-sm">Revoke Others</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Save Button -->
+  <div style="margin-top: 32px;">
+    <button type="button" class="btn-teal" style="background-color: #0284c7; width: 100%; padding: 12px; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <span>💾</span> Save All Settings Changes
+    </button>
+  </div>
+
+</section>
+
+    </div>
+  </main>
+
+  <!-- Component Loading Script -->
+  <script>
+    // Fetch navbar from parent directory
+    fetch('../dashboard/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Fetch sidebar from parent directory & highlight Settings link
+    fetch('../dashboard/sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Settings') || link.innerText.includes('Setting')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>

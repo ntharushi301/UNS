@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Classroom - Live Stream - Student Portal</title>
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+
+  <!-- Navigation Panel Placeholder -->
+  <div id="navbar-container"></div>
+
+  <!-- Sidebar Drawer & Overlay Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <main class="dashboard-container">
+    <!-- Header Title & Action Buttons Row -->
+    <div class="header-action-row" style="align-items: center;">
+      <section class="welcome-header">
+        <h1>Virtual Classroom - Live Stream</h1>
+        <p class="subtitle">Final Year Project Mentoring Session • Eng. K. Jay</p>
+      </section>
+      
+      <div style="display: flex; gap: 12px;">
+        <a href="daily-timetable.html" class="btn-change-password btn-back">
+          <span>⬅</span> Back to Timetable
+        </a>
+        <button type="button" class="btn-teal" style="background-color: #ef4444; color: #ffffff; padding: 8px 16px; border: none; font-size: 12px; display: flex; align-items: center; gap: 6px;">
+          <span>🚪</span> Leave Meeting
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Live Stream Grid -->
+    <section class="card" style="padding: 24px; background-color: #0f192e;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+        
+        <!-- Left Column: Stream Screen & Call Controls -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+          
+          <!-- Video Screen Box -->
+          <div style="width: 100%; aspect-ratio: 16 / 9; background-color: #000000; border-radius: 8px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            
+            <!-- Live Badge -->
+            <div style="position: absolute; top: 16px; left: 16px; background-color: #ef4444; color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px; display: flex; align-items: center; gap: 6px;">
+              <span style="width: 6px; height: 6px; background-color: #ffffff; border-radius: 50%;"></span>
+              LIVE (00:42:15)
+            </div>
+
+            <!-- Speaker Avatar Circle -->
+            <div style="width: 80px; height: 80px; background-color: #38bdf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; color: #080f1e; margin-bottom: 12px;">
+              KJ
+            </div>
+            <span style="font-size: 13px; font-weight: 600; color: #ffffff;">Eng. K. Jay (Speaker)</span>
+
+          </div>
+
+          <!-- Media Toolbar -->
+          <div style="background-color: #080f1e; border: 1px solid #1e293b; border-radius: 24px; padding: 6px 16px; display: flex; align-items: center; gap: 12px;">
+            <button type="button" title="Mute" style="width: 32px; height: 32px; border-radius: 50%; background-color: #1e293b; border: none; color: #cbd5e1; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">🎙️</button>
+            <button type="button" title="Video" style="width: 32px; height: 32px; border-radius: 50%; background-color: #1e293b; border: none; color: #cbd5e1; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">📹</button>
+            <button type="button" title="Share Screen" style="width: 32px; height: 32px; border-radius: 50%; background-color: #0284c7; border: none; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">💻</button>
+            <button type="button" title="Raise Hand" style="width: 32px; height: 32px; border-radius: 50%; background-color: #1e293b; border: none; color: #cbd5e1; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">✋</button>
+            <button type="button" title="Reaction" style="width: 32px; height: 32px; border-radius: 50%; background-color: #1e293b; border: none; color: #cbd5e1; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">💬</button>
+            <button type="button" title="End Call" style="width: 32px; height: 32px; border-radius: 50%; background-color: #ef4444; border: none; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;">❌</button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Class Chat Panel -->
+        <div style="background-color: #080f1e; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; min-height: 380px;">
+          
+          <div>
+            <h2 style="font-size: 15px; font-weight: 600; color: #ffffff; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 16px;">
+              <span>💬</span> Class Chat (18)
+            </h2>
+
+            <!-- Message Feed -->
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <span style="font-size: 11px; font-weight: 700; color: #38bdf8; display: block; margin-bottom: 2px;">Eng. K. Jay</span>
+                <p style="font-size: 12px; color: #cbd5e1;">Welcome everyone to the session!</p>
+              </div>
+
+              <div>
+                <span style="font-size: 11px; font-weight: 700; color: #2dd4bf; display: block; margin-bottom: 2px;">Nadun (You)</span>
+                <p style="font-size: 12px; color: #cbd5e1;">Good afternoon sir, I shared the diagram.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Field -->
+          <div style="margin-top: 16px;">
+            <input type="text" class="field-input" placeholder="Type a message..." style="width: 100%; font-size: 12px; padding: 10px 14px;" />
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Component Loading Script -->
+  <script>
+    // Fetch navbar from parent directory
+    fetch('../dashboard/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Fetch sidebar from parent directory & highlight Timetable link
+    fetch('../dashboard/sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Timetable')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>
