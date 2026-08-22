@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Calendar & Events - Student Portal</title>
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="notice.css">
+  
+</head>
+<body>
+
+  <!-- Navigation Panel Placeholder -->
+  <div id="navbar-container"></div>
+
+  <!-- Sidebar Drawer & Overlay Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <main class="dashboard-container">
+    <!-- Header Title & Back Button Row -->
+    <div class="header-action-row">
+      <section class="welcome-header">
+        <h1>Academic Calendar & Events</h1>
+        <p class="subtitle">Select any date to view scheduled events and deadlines.</p>
+      </section>
+      
+      <!-- Back to Dashboard Button -->
+      <a href="../dashboard/dashboard.html" class="btn-change-password btn-back">
+        <span>⬅</span> Back to Dashboard
+      </a>
+    </div>
+
+    <!-- Main 2-Column Grid Layout -->
+    <div class="top-grid">
+      
+      <!-- Left Column: Interactive Month Calendar -->
+      <section class="card calendar-card" style="padding: 28px;">
+        <div class="calendar-header" style="justify-content: space-between; margin-bottom: 24px;">
+          <h2>October 2024</h2>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn-change-password" style="padding: 4px 10px; margin: 0;">◀</button>
+            <button type="button" class="btn-change-password" style="padding: 4px 10px; margin: 0;">▶</button>
+          </div>
+        </div>
+
+        <div class="calendar-grid weekdays" style="font-weight: 700; margin-bottom: 16px;">
+          <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+        </div>
+
+        <div class="calendar-grid dates" style="row-gap: 12px;">
+          <span class="other-month">29</span>
+          <span class="other-month">30</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          <span>13</span>
+          <!-- Selected/Highlighted Today Date -->
+          <span class="today-highlight" style="border: 1px solid #38bdf8; background: transparent; color: #38bdf8; border-radius: 50%; width: 28px; height: 28px; line-height: 26px;">14</span>
+          <span>15</span><span>16</span><span>17</span>
+          <!-- Event Highlighted Date -->
+          <span style="background-color: #ef4444; color: #ffffff; border-radius: 6px; width: 28px; height: 28px; line-height: 28px; font-weight: 700; position: relative; margin: 0 auto;">
+            18
+            <span style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; background-color: #ffffff; border-radius: 50%;"></span>
+          </span>
+          <span>19</span>
+          <span>20</span><span>21</span>
+          <!-- Dot Indicator Date -->
+          <span class="active-date">22</span>
+          <span>23</span><span>24</span><span>25</span><span>26</span>
+          <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+          <span class="other-month">1</span>
+          <span class="other-month">2</span>
+        </div>
+      </section>
+
+      <!-- Right Column: Events Overview Panel -->
+      <section class="card form-card" style="padding: 28px;">
+        <div style="margin-bottom: 24px;">
+          <h2 style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 4px;">Events Overview</h2>
+          <span style="font-size: 11px; font-weight: 700; color: #38bdf8; letter-spacing: 0.5px;">SELECTED DATE: OCT 18, 2024</span>
+        </div>
+
+        <div class="feed-list">
+          <!-- Deadline Event Card (Red Outline) -->
+          <div class="feed-card-item" style="border: 1.5px solid #ef4444; background-color: #0c1322;">
+            <div style="margin-bottom: 8px;">
+              <span class="badge" style="background-color: #ef4444; color: #ffffff; font-size: 10px; padding: 2px 8px;">DEADLINE</span>
+            </div>
+            <h3 class="notice-headline">CS302 Project Submission</h3>
+            <p class="notice-description" style="margin-bottom: 4px; color: #cbd5e1;">⏰ Time: 11:59 PM • Online Portal</p>
+            <p class="author-label" style="color: #64748b;">Module: Advanced Database Systems</p>
+          </div>
+
+          <!-- Lecture Event Card -->
+          <div class="feed-card-item">
+            <div style="margin-bottom: 8px;">
+              <span class="badge" style="background-color: #0284c7; color: #ffffff; font-size: 10px; padding: 2px 8px;">LECTURE</span>
+            </div>
+            <h3 class="notice-headline">Guest Lecture: Cybersecurity</h3>
+            <p class="notice-description" style="margin-bottom: 0;">📍 Oct 22 • 10:00 AM • Auditorium A</p>
+          </div>
+
+          <!-- Notice Event Card -->
+          <div class="feed-card-item">
+            <div style="margin-bottom: 8px;">
+              <span class="badge badge-teal" style="font-size: 10px; padding: 2px 8px;">NOTICE</span>
+            </div>
+            <h3 class="notice-headline">Library Extended 24/7 Hours</h3>
+            <p class="notice-description" style="margin-bottom: 0;">📌 Starts Next Week • Main Library</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Component Loading Script -->
+  <script>
+    // Fetch navbar from parent directory
+    fetch('../dashboard/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Fetch sidebar from parent directory & highlight Notice link
+    fetch('../dashboard/sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Notices') || link.innerText.includes('Notice')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>

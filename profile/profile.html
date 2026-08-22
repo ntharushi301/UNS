@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Overview - Student Portal</title>
+  <!-- Fixed path to styles.css -->
+  <link rel="stylesheet" href="../dashboard/base.css">
+  <link rel="stylesheet" href="profiles.css">
+</head>
+<body>
+
+  <!-- Navigation Panel Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Slide-Over Sidebar Drawer Structure -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="sidebar-drawer" id="sidebar-drawer">
+    <div id="sidebar-container"></div>
+  </div>
+
+  <!-- Main Profile Page Container -->
+  <main class="dashboard-container profile-page">
+    
+    <!-- Profile Page Header -->
+    <header class="profile-header-row">
+      <h1>Student Profile Overview</h1>
+      <button class="btn-edit-settings" onclick="window.location.href='edit_profile.html';">Edit Profile Settings</button>
+    </header>
+
+    <!-- Top Grid: Avatar & Academic Credentials -->
+    <div class="profile-top-grid">
+      
+      <!-- Left Card: User Big Avatar Card -->
+      <section class="card profile-user-card">
+        <div class="large-avatar-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h2 class="user-fullname">NADUN SENANAYAKE</h2>
+        <p class="user-role">Undergraduate Student</p>
+        <span class="user-intake">Intake: January 2023</span>
+      </section>
+
+      <!-- Right Card: Academic Credentials -->
+      <section class="card academic-credentials-card">
+        <h2 class="card-title">Academic Credentials</h2>
+        
+        <div class="credentials-grid">
+          <div class="credential-field">
+            <label>UNIVERSITY EMAIL</label>
+            <div class="field-value">2023IT0000@sdu.cmb.ac.lk</div>
+          </div>
+
+          <div class="credential-field">
+            <label>INDEX NUMBER</label>
+            <div class="field-value">2023IT0000</div>
+          </div>
+
+          <div class="credential-field">
+            <label>CURRENT SEMESTER/BATCH</label>
+            <div class="field-value">Year 2 - Semester 01</div>
+          </div>
+
+          <div class="credential-field">
+            <label>ACCOUNT STATUS / ROLE</label>
+            <div class="field-value status-active">Active / Verified</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bottom Grid: Security & Portal Notifications -->
+    <div class="profile-bottom-grid">
+      
+      <!-- Security & Active Sessions Card -->
+      <section class="card security-card">
+        <h2 class="card-title">Security & Active Sessions</h2>
+        
+        <div class="security-info-group">
+          <h3>Last Login Activity</h3>
+          <p class="activity-desc">Today 10:15 PM • Colombo, Sri Lanka (Chrome/Windows)</p>
+        </div>
+
+        <div class="security-info-group">
+          <h3>Two-Factor Authentication (2FA)</h3>
+          <p class="status-2fa">Enabled via University SMS Gateway</p>
+        </div>
+
+        <button class="btn-change-password">Change Password</button>
+      </section>
+
+      <!-- Portal Notifications Toggle Card -->
+      <section class="card notifications-settings-card">
+        <h2 class="card-title">Portal Notifications</h2>
+
+        <div class="toggle-list">
+          <!-- Toggle Item 1 -->
+          <div class="toggle-item">
+            <div class="toggle-text">
+              <h3>Global Academic Notices</h3>
+              <p>Receive push alerts for main faculty announcements.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle Item 2 -->
+          <div class="toggle-item">
+            <div class="toggle-text">
+              <h3>Year 2 Semester Notices</h3>
+              <p>Receive batch-specific announcement updates.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle Item 3 -->
+          <div class="toggle-item">
+            <div class="toggle-text">
+              <h3>Email Digests</h3>
+              <p>Send a daily summary of missed notifications.</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Navbar and Sidebar Injection Logic with fixed relative paths -->
+  <script>
+    // Fetch and insert navbar
+    fetch('../dashboard/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        
+        // Attach click listener to profile icon
+        const profileToggle = document.getElementById('profile-toggle');
+        if (profileToggle) {
+          profileToggle.addEventListener('click', toggleSidebar);
+        }
+      });
+
+    // Fetch and insert sidebar
+    fetch('../dashboard/sidebar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('sidebar-container').innerHTML = data;
+
+        
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.innerText.includes('Profile') || link.innerText.includes('Profile')) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    overlay.addEventListener('click', toggleSidebar);
+  </script>
+</body>
+</html>
