@@ -1,0 +1,271 @@
+/* src/styles/Profiles.css */
+
+.profile-page {
+  padding-top: 20px;
+}
+
+.profile-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.profile-header-row h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.btn-edit-settings {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit-settings:hover {
+  background-color: #1d4ed8;
+}
+
+/* Grids */
+.profile-top-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.profile-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Left Card: Avatar Profile */
+.profile-user-card {
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+}
+
+.large-avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 2px solid #334155;
+}
+
+.large-avatar-wrapper svg {
+  width: 50px;
+  height: 50px;
+  stroke: #64748b;
+}
+
+.user-fullname {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.user-role {
+  color: #22d3ee;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.user-intake {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* Cards Shared Title */
+.academic-credentials-card,
+.security-card,
+.notifications-settings-card {
+  padding: 24px;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Credentials Grid & Dark Display Boxes */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.credential-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credential-field label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.8px;
+}
+
+.credential-field .field-value {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.credential-field .field-value.status-active {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Security Details */
+.security-info-group {
+  margin-bottom: 18px;
+}
+
+.security-info-group h3 {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.activity-desc {
+  font-size: 11px;
+  color: #475569;
+}
+
+.status-2fa {
+  font-size: 11px;
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.btn-change-password {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s;
+}
+
+.btn-change-password:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+/* Toggle Lists */
+.toggle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-text h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 2px;
+}
+
+.toggle-text p {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Switch Styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1e293b;
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #10b981;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 1024px) {
+  .profile-top-grid,
+  .profile-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}

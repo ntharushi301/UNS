@@ -1,0 +1,388 @@
+/* src/styles/Timetable.css */
+
+/* ==========================================
+   1. TABLE SCHEDULE (WEEKLY)
+   ========================================== */
+.schedule-table-wrapper { overflow-x: auto; }
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.schedule-table th, .schedule-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+  border-right: 1px solid #1e293b;
+  width: 18%;
+}
+.schedule-table th.time-col, .schedule-table td.time-col {
+  width: 10%;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+.time-col-sub { display: block; font-size: 10px; color: #64748b; }
+.schedule-table th {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+  background-color: #0f1935;
+}
+
+.slot-card {
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slot-time { font-size: 10px; opacity: 0.7; margin-top: 4px; }
+.slot-card.cyan { background-color: #15384b; color: #38bdf8; }
+.slot-card.grey { background-color: #273347; color: #38bdf8; }
+.slot-card.blue { background-color: #1e3a8a; color: #93c5fd; }
+.slot-card.purple { background-color: #581c87; color: #e9d5ff; }
+
+/* ==========================================
+   2. TOP CONTROLS & TABS
+   ========================================== */
+.tt-header-card { padding: 24px; background-color: #0f192e; }
+.tt-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.view-toggle-group {
+  display: flex;
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 4px;
+}
+.tab-btn {
+  background-color: transparent;
+  color: #64748b;
+  margin: 0;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.tab-btn.active {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.day-tabs-row {
+  display: flex;
+  gap: 8px;
+  background-color: #080f1e;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  margin-bottom: 28px;
+}
+.day-btn {
+  flex: 1;
+  background-color: transparent;
+  color: #64748b;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.day-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ==========================================
+   3. DAILY TIMELINE
+   ========================================== */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding-left: 10px;
+}
+.timeline-row { display: flex; gap: 20px; align-items: flex-start; }
+.timeline-row.center { align-items: center; }
+.time-marker {
+  width: 90px;
+  text-align: right;
+  flex-shrink: 0;
+  position: relative;
+}
+.time-start { font-size: 12px; font-weight: 700; display: block; }
+.time-end { font-size: 10px; color: #64748b; }
+.time-dot {
+  position: absolute;
+  right: -16px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.color-teal { color: #2dd4bf; }
+.bg-teal { background-color: #2dd4bf; }
+.color-blue { color: #38bdf8; }
+.bg-blue { background-color: #38bdf8; }
+.color-purple { color: #c084fc; }
+.bg-purple { background-color: #c084fc; }
+.color-grey { color: #64748b; }
+
+.timeline-card {
+  flex: 1;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.timeline-card.teal { border-left: 4px solid #2dd4bf; background-color: #0d3838; }
+.timeline-card.blue { border-left: 4px solid #38bdf8; background-color: #0c2742; }
+.timeline-card.purple { border-left: 4px solid #c084fc; background-color: #3b0764; }
+
+.tl-title { font-size: 15px; display: block; margin-bottom: 4px; font-weight: 600; }
+.tl-subtitle { font-size: 12px; display: block; margin-bottom: 4px; }
+.tl-desc { font-size: 11px; color: #64748b; }
+
+.timeline-break {
+  flex: 1;
+  background-color: #080f1e;
+  border: 1px dashed #1e293b;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #64748b;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================
+   4. HALL MAP
+   ========================================== */
+.map-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+.map-viewport {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  min-height: 380px;
+}
+.map-block {
+  background-color: #1e293b;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: center;
+  padding: 12px;
+}
+.map-block.active {
+  background-color: #0284c7;
+  border: 2px solid #38bdf8;
+  color: #ffffff;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.4);
+}
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ef4444;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.venue-details {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.venue-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 12px;
+}
+.vd-label { font-size: 10px; font-weight: 700; color: #64748b; letter-spacing: 0.8px; display: block; margin-bottom: 4px; }
+.vd-value { font-size: 13px; font-weight: 600; color: #ffffff; }
+.facility-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #94a3b8; }
+.facility-list li { display: flex; align-items: center; gap: 6px; }
+
+/* ==========================================
+   5. VIRTUAL LECTURE
+   ========================================== */
+.lecture-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+.video-column { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.video-screen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.live-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.live-dot { width: 6px; height: 6px; background-color: #ffffff; border-radius: 50%; }
+.speaker-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #080f1e;
+  margin-bottom: 12px;
+}
+.media-toolbar {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tool-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.tool-btn.active { background-color: #0284c7; color: #ffffff; }
+.tool-btn.danger { background-color: #ef4444; color: #ffffff; }
+
+.chat-panel {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 380px;
+}
+.chat-msgs { display: flex; flex-direction: column; gap: 14px; }
+.msg-sender { font-size: 11px; font-weight: 700; display: block; margin-bottom: 2px; }
+.msg-text { font-size: 12px; color: #cbd5e1; }
+
+/* ==========================================
+   6. LECTURE MATERIALS
+   ========================================== */
+.slide-viewer-card {
+  padding: 24px;
+  background-color: #0f192e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-screen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+.slide-title { font-size: 24px; font-weight: 700; color: #2dd4bf; margin-bottom: 12px; }
+.slide-subtitle { font-size: 14px; color: #94a3b8; }
+.slide-controls {
+  margin-top: 20px;
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.slide-arrow { background: transparent; border: none; color: #38bdf8; cursor: pointer; font-size: 14px; }
+.slide-count { font-size: 12px; color: #94a3b8; font-weight: 600; }
+
+.files-column { display: flex; flex-direction: column; gap: 16px; }
+.file-list { display: flex; flex-direction: column; gap: 12px; }
+.file-card {
+  background-color: #080f1e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.file-card.active { background-color: #0d3838; border: 1.5px solid #2dd4bf; }
+.file-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.file-name { font-size: 13px; font-weight: 600; color: #cbd5e1; }
+.file-card.active .file-name { color: #2dd4bf; }
+.file-meta { font-size: 11px; color: #64748b; display: block; padding-left: 26px; }
+
+/* Reusable custom buttons */
+.btn-export { background-color: #1e293b; border: 1px solid #334155; color: #38bdf8; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
+.btn-teal-sm { background-color: #0f766e; color: #ffffff; font-size: 11px; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; }
+.btn-outline-sm { background-color: #1e293b; border: 1px solid #334155; color: #cbd5e1; font-size: 11px; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+.btn-purple-sm { background-color: #7e22ce; color: #ffffff; font-size: 11px; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; }
