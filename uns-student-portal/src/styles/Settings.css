@@ -1,4 +1,4 @@
-/* UNS/settings/settings.css */
+/* src/styles/Settings.css */
 
 .toggle-list { display: flex; flex-direction: column; gap: 20px; }
 .toggle-item { display: flex; justify-content: space-between; align-items: center; }
