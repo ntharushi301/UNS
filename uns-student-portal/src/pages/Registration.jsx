@@ -1,12 +1,12 @@
 // src/pages/Registration.jsx
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/Logo.png';
-import '../styles/Logging.css';
+import React, { useState } from 'react'; //import React and useState hook for managing form state
+import { Link, useNavigate } from 'react-router-dom'; //import Link and useNavigate from react-router-dom for navigation and linking
+import logo from '../assets/Logo.png';//import the logo image for the registration page
+import '../styles/Logging.css'; //import the CSS file for styling the registration page
 
-export default function Registration() {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+export default function Registration() { //define the Registration component
+  const navigate = useNavigate(); //navigate function to programmatically navigate to different routes
+  const [formData, setFormData] = useState({ //initialize formData state with default values for the registration form
     fullname: '',
     email: '',
     password: '',
@@ -15,24 +15,24 @@ export default function Registration() {
     year: '2nd',
     terms: true,
   });
-
+  //handleChange function to update formData state when input fields change
   const handleChange = (e) => {
-    const { id, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: type === 'checkbox' ? checked : value,
+    const { id, value, type, checked } = e.target; //destructure the event target to get the id, value, type, and checked properties of the input field
+    setFormData((prev) => ({ //update the formData state with the new value for the input field that changed
+      ...prev, //spread the previous formData state to keep other values unchanged
+      [id]: type === 'checkbox' ? checked : value, //if the input field is a checkbox, use the checked value, otherwise use the value
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/dashboard');
+  const handleSubmit = (e) => { //handleSubmit function to handle form submission
+    e.preventDefault(); //prevent the default form submission behavior- stop reloading the whole page
+    navigate('/dashboard'); //navigate to the dashboard page after successful registration
   };
-
+  //render the registration page with a hero section on the left and a registration form on the right
   return (
     <div className="page-container">
       {/* Left Hero Section */}
-      <div className="hero-section">
+      <div className="hero-section"> 
         <div className="logo-wrapper">
           <img src={logo} alt="UNS Logo" className="brand-logo" />
         </div>
@@ -152,6 +152,7 @@ export default function Registration() {
                     <option value="student">Undergraduate Student</option>
                     <option value="lecturer">Lecturer</option>
                     <option value="admin">Administrator</option>
+                    <option value="admin">Batch representative</option>
                   </select>
                 </div>
               </div>

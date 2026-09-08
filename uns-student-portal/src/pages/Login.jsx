@@ -15,7 +15,7 @@ export default function Login() {
     navigate('/dashboard');
   };
 
-  return (
+  return ( 
     <div className="login-body">
       <div className="login-card">
         {/* Logo */}

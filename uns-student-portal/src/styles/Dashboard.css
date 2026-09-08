@@ -2,7 +2,7 @@
 
 .notices-card {
   padding: 24px;
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   color: #0f172a;
 }
 .notices-card .card-header {
