@@ -1,11 +1,11 @@
 // src/pages/Registration.jsx
 import React, { useState } from 'react'; //import React and useState hook for managing form state
 import { Link, useNavigate } from 'react-router-dom'; //import Link and useNavigate from react-router-dom for navigation and linking
-import logo from '../assets/Logo.png';//import the logo image for the registration page
-import '../styles/Logging.css'; //import the CSS file for styling the registration page
+import logo from '../assets/Logo.png';
+import '../styles/Logging.css'; 
 
-export default function Registration() { //define the Registration component
-  const navigate = useNavigate(); //navigate function to programmatically navigate to different routes
+export default function Registration() { 
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ //initialize formData state with default values for the registration form
     fullname: '',
     email: '',
@@ -19,14 +19,14 @@ export default function Registration() { //define the Registration component
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target; //destructure the event target to get the id, value, type, and checked properties of the input field
     setFormData((prev) => ({ //update the formData state with the new value for the input field that changed
-      ...prev, //spread the previous formData state to keep other values unchanged
-      [id]: type === 'checkbox' ? checked : value, //if the input field is a checkbox, use the checked value, otherwise use the value
+      ...prev,
+      [id]: type === 'checkbox' ? checked : value, 
     }));
   };
 
   const handleSubmit = (e) => { //handleSubmit function to handle form submission
     e.preventDefault(); //prevent the default form submission behavior- stop reloading the whole page
-    navigate('/dashboard'); //navigate to the dashboard page after successful registration
+    navigate('/dashboard');
   };
   //render the registration page with a hero section on the left and a registration form on the right
   return (
